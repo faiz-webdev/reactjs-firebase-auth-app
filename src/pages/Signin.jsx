@@ -1,23 +1,24 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from "../firebase";
 
 const auth = getAuth(app);
 
-function Signup() {
+function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const createUser = () => {
-    createUserWithEmailAndPassword(auth, email, password).then((e) =>
-      console.log(e)
-    );
-    console.log("Creating user");
+  const singinUser = () => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((e) => console.log(e))
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return (
     <div className="signup-page">
-        <h1>Sign up</h1>
+      <h1>Sign in</h1>
       <label htmlFor="">Email</label>
       <input
         type="email"
@@ -34,9 +35,9 @@ function Signup() {
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />
-      <button onClick={createUser}>Signup</button>
+      <button onClick={singinUser}>Signin</button>
     </div>
   );
 }
 
-export default Signup;
+export default Signin;
