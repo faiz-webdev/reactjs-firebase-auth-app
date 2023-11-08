@@ -1,0 +1,7 @@
+REACT_APP_API_KEY=AIzaSyCyin0U9S
+REACT_APP_AUTH_DOMAIN=reactjs-auth-app
+REACT_APP_PROJECT_ID=reactjs-auth-app
+REACT_APP_STORGE_BUCKET=reactjs-auth-app
+REACT_APP_MESSAGE_SENDER_ID=21147494333
+REACT_APP_APP_ID=1:21147494613:web:
+REACT_APP_DATABASE_URL=https://reactjs-auth-app-default-rtdb.firebaseio.com

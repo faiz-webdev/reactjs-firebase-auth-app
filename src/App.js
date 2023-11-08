@@ -7,7 +7,7 @@ function App() {
   const putData = () => {
     set(ref(db, "users/faiz"), {
       id: 1,
-      name: "Faiz Ansari",
+      name: "Faiz Ansari update",
       age: 29,
     });
   };
