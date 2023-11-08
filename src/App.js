@@ -1,21 +1,25 @@
-import { getDatabase, ref, set } from "firebase/database";
 import { app } from "./firebase";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import Signup from './pages/Signup';
 
-const db = getDatabase(app);
+const auth = getAuth();
 
 function App() {
-  const putData = () => {
-    set(ref(db, "users/faiz"), {
-      id: 1,
-      name: "Faiz Ansari update",
-      age: 29,
+  const signupUser = () => {
+    createUserWithEmailAndPassword(
+      auth,
+      "faijuddin@tothenew.com",
+      "faiz@12345"
+    ).then((value) => {
+      console.log(value);
     });
   };
 
   return (
     <div className="App">
-      <h2>Welcome to firebase-auth-app</h2>
-      <button onClick={putData}>Put data</button>
+      {/* <h2>Welcome to firebase-auth-app</h2>
+      <button onClick={signupUser}>Create User</button> */}
+      <Signup />
     </div>
   );
 }
